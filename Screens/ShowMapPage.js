@@ -9,10 +9,6 @@ export default class ShowMapPage extends React.Component{
  // Please follow the map to find your nearest station
     return (
       <View style={styles.container}>
-        <Text>
-        
-          {dropoffPressed}+' '+{numBags}
-        </Text>
         <Button
           title={'Scan QR Code'}
           style={styles.input}
