@@ -11,7 +11,7 @@ export default class MainPage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> Hello {this.username}! </Text>
+        <Text style={styles.text}> Hello {this.username}! </Text>
       </View>
     );
   }
@@ -21,12 +21,12 @@ export default class MainPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    
+    padding: 10,
   }
 });
