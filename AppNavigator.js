@@ -1,10 +1,18 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Login from './Login'
-import MainPage from './MainPage'
+import LoginPage from './LoginPage'
+import PickOrDropPage from './PickOrDropPage'
+import SetBagNumPage from './SetBagNumPage'
+import ShowMapPage from './ShowMapPage'
+import ShowQRCodePage from './ShowQRCodePage'
+import ThankyouPage from './ThankyouPage'
 
 const AppNavigator = createStackNavigator({
-  Login: { screen: Login},
-  MainPage: { screen: MainPage},
+  LoginPage: { screen: LoginPage},
+  PickOrDropPage: { screen: PickOrDropPage},
+  SetBagNumPage: { screen: SetBagNumPage},
+  ShowMapPage: { screen: ShowMapPage},
+  ShowQRCodePage: { screen: ShowQRCodePage},
+  ThankyouPage: { screen: ThankyouPage}
 });
 
 const App = createAppContainer(AppNavigator);
