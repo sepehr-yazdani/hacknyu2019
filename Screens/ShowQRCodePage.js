@@ -34,6 +34,9 @@ export default class ShowQRCodePage extends React.Component{
         <QRCode
           value={str}
           size={200}/> 
+        <Text>
+          {str}
+        </Text>
         <Button
           title={'Finish'}
           style={styles.input}
