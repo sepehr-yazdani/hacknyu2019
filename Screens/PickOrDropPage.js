@@ -32,7 +32,7 @@ export default class PickOrDropPage extends React.Component {
           <Button
             title={'Pick Up'}
             titleStyle={{fontWeight: '700', fontSize: 32}}
-            buttonStyle={styles.pickButton}
+            buttonStyle={styles.button}
             containerStyle={{ marginTop: 20 }}
             onPress={this.onPickupPressed.bind(this)}
           />
@@ -40,7 +40,7 @@ export default class PickOrDropPage extends React.Component {
           <Button
             title={'Drop Off'}
             titleStyle={{fontWeight: '700', fontSize: 32}}
-            buttonStyle={styles.dropButton}
+            buttonStyle={styles.button}
             containerStyle={{ marginTop: 20 }}
             onPress={this.onDropoffPressed.bind(this)}
           />
@@ -49,7 +49,6 @@ export default class PickOrDropPage extends React.Component {
     );
   }
 }
-
 
 
 const styles = StyleSheet.create({
@@ -72,12 +71,12 @@ const styles = StyleSheet.create({
     //opacity: 0.8,
   },
 
-  pickButton: {
+   button: {
         //flex: 1,
         //flexDirection: 'column',
         alignSelf: "center",
         backgroundColor: "rgba(17, 163,52, 1)",
-        width: 200,
+        width: 240,
         height: 100,
         borderColor: "transparent",
         borderWidth: 0,
@@ -86,20 +85,5 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginBottom: 10,
   },
-
-
-
-  dropButton: {
-        //flex: 1,
-        //flexDirection: 'column',
-        alignSelf: "center",
-        backgroundColor: "rgba(17, 163,52, 1)",
-        width: 200,
-        height: 100,
-        borderColor: "transparent",
-        borderWidth: 0,
-        borderRadius: 5,
-        marginTop: 10,
-        marginBottom: 10,
-  },
 });
+
