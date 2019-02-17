@@ -18,7 +18,7 @@ export default class SetBagNumPage extends React.Component{
     const {navigation}=this.props;
 
     const username=navigation.getParam('username', '');
-    const dropoffPressed=navigation.getParam('dropoffPressed', true);    
+    const dropoffPressed=navigation.getParam('dropoffPressed', true);
 
 
     return (
@@ -27,12 +27,13 @@ export default class SetBagNumPage extends React.Component{
           {dropoffPressed==true ?
             <Text style={styles.textAnnounce}> Enter number of bags to drop off: </Text> :
             <Text style={styles.textAnnounce}> Enter number of bags to pick up: </Text>
-          }        
+          }
           <TextInput
             value={this.state.numBags}
             onChangeText={(numBags) => this.setState({ numBags })}
             placeholder={'0'}
             style={styles.inputText}
+            keyboardType={'numeric'}
           />
           <Button
             title={'Submit'}
