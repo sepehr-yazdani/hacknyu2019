@@ -54,6 +54,14 @@ export default class SetBagNumPage extends React.Component{
 				'pickup': pickup
             })}
           />
+          <Button
+           title={'Go to Map'}
+           titleStyle={{fontWeight: '300', fontSize: 24}}
+           buttonStyle={styles.goToMapButton}
+           style={styles.input}
+           containerStyle={{ marginTop: 20 }}
+           onPress={()=>this.props.navigation.navigate('ShowMapPage')}
+         />
         </View>
       </ImageBackground>
     );
@@ -108,9 +116,23 @@ const styles = StyleSheet.create({
     //flexDirection: 'column',
     alignSelf: 'center',
     backgroundColor: 'rgba(17, 163,52, 1)',
-    width: 200,
-    height: 100,
+    width: 240,
+    height: 80,
     marginTop: 10,
     marginBottom: 10,
   },
+
+  goToMapButton: {
+       //flex: 1,
+       //flexDirection: 'column',
+       alignSelf: "center",
+       backgroundColor: "rgba(0, 70 , 180, 1)",
+       width: 300,
+       height: 50,
+       borderColor: "transparent",
+       borderWidth: 0,
+       borderRadius: 5,
+       marginTop: 10,
+       marginBottom: 10,
+ },
 });
