@@ -14,19 +14,25 @@ export default class SetBagNumPage extends React.Component{
     this.props.navigation.navigate('ShowMapPage')
   }
 
+  onMapButtonPressed(){
+    this.props.navigation.navigate('ShowMapPage')
+  }
+
   render() {
     const {navigation}=this.props;
-
     const username=navigation.getParam('username', '');
     const dropoffPressed=navigation.getParam('dropoffPressed', true);
-
+    const dropoff=navigation.getParam('dropoff', 0);
+    const pickup=navigation.getParam('pickup', 0);
+    let str='You have dropped off '+dropoff+' bags and picked up '+pickup+' bags up to now. '
 
     return (
      <ImageBackground source={require('../assets/greenpattern.jpg')} style={styles.background}>
         <View style={styles.whitescreen}>
+          <Text style={styles.textAnnounce}>{str}</Text>
           {dropoffPressed==true ?
-            <Text style={styles.textAnnounce}> Enter number of bags to drop off: </Text> :
-            <Text style={styles.textAnnounce}> Enter number of bags to pick up: </Text>
+            <Text style={styles.textAnnounce}>How many bags would you like to drop off today?</Text> :
+            <Text style={styles.textAnnounce}>How many bags would you like to pick up today?</Text>
           }
           <TextInput
             value={this.state.numBags}
@@ -40,12 +46,12 @@ export default class SetBagNumPage extends React.Component{
               titleStyle={{fontWeight: '400', fontSize: 24}}
               buttonStyle={styles.button}
               containerStyle={{ marginTop: 20 }}
-            onPress={()=>this.props.navigation.navigate('ShowMapPage', {
-
-              'username': username,
-
-              'dropoffPressed': dropoffPressed,
-              'numBags': this.state.numBags
+            onPress={()=>this.props.navigation.navigate('ShowQRCodePage', {
+				'username': username,
+				'dropoffPressed': dropoffPressed,
+				'numBags': this.state.numBags,
+				'dropoff': dropoff,
+				'pickup': pickup
             })}
           />
         </View>
@@ -70,8 +76,8 @@ const styles = StyleSheet.create({
   },
 
   textAnnounce: {
-    fontSize: 42,
-    fontWeight: '800',
+    fontSize: 21,
+    fontWeight: '300',
     paddingBottom: 20,
     marginRight: 10,
     marginLeft: 10,

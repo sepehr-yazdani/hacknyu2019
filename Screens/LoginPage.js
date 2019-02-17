@@ -12,20 +12,20 @@ export default class LoginPage extends React.Component {
 
   onAuthenticate(){
     const { username, password } = this.state
-    if(password=='qwerty'){
-      this.onLogin();
-    }else{
+    if((username=='Alice' || username=='Bob') && password!='qwerty'){
       alert('Incorrect user name or password. Please try again.')
+    }else{
+      this.onLogin();
     }
   }
 
   onLogin() {
-    const { username, password } = this.state
     this.props.navigation.navigate('PickOrDropPage',
       {username : this.state.username,
-      password : this.state.password,});
+       password : this.state.password,
+      });
   }
-
+  
   render() {
     return (
       <View style={styles.container}>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#00ffff',
   },
   input: {
     width: 200,

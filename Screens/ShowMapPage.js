@@ -12,16 +12,6 @@ export default class ShowMapPage extends React.Component{
  // Please follow the map to find your nearest station
     return (
       <View style={styles.container}>
-        <Button
-          title={'Scan QR Code'}
-          style={styles.input}
-          onPress={() => this.props.navigation.navigate('ShowQRCodePage', {
-            'username': username,
-
-            'dropoffPressed': dropoffPressed,
-            'numBags': numBags
-          })}
-        />
       </View>
     );
   }
