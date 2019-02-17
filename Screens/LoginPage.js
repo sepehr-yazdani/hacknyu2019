@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Request, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
-import logoImg from '../assets/download.png';
+import logoImg from '../assets/icons/grocerly_icon.png';
 
 export default class LoginPage extends React.Component {
   constructor(props){
@@ -64,11 +64,11 @@ const styles = StyleSheet.create({
     flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fffce2',
+    backgroundColor: '#fbfcf2',
   },
   image: {
     width: 120,
-    height: 120,
+    height: 180,
   },
   text: {
     color: '#111602',
