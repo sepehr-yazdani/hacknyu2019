@@ -11,16 +11,15 @@ export default class PickOrDropPage extends React.Component {
       dropoffPressed: true
     };
   }
-  
-  onPickupPressed(){
-  //  this.setState(false) 
 
+  onPickupPressed(){
+  //  this.setState(false)
     this.props.navigation.navigate('SetBagNumPage', {username: this.username, dropoffPressed: false})
 
   }
 
   onDropoffPressed(){
-  //  this.setState(true)  
+  //  this.setState(true)
 
     this.props.navigation.navigate('SetBagNumPage', {username: this.username, dropoffPressed: true})
 
@@ -32,15 +31,15 @@ export default class PickOrDropPage extends React.Component {
         <View style={styles.whitescreen}>
           <Button
             title={'Pick Up'}
-            titleStyle={{fontWeight: "700", fontSize: "32"}}
+            titleStyle={{fontWeight: '700', fontSize: 32}}
             buttonStyle={styles.pickButton}
             containerStyle={{ marginTop: 20 }}
             onPress={this.onPickupPressed.bind(this)}
           />
-        
+
           <Button
             title={'Drop Off'}
-            titleStyle={{fontWeight: "700", fontSize: "32"}}
+            titleStyle={{fontWeight: '700', fontSize: 32}}
             buttonStyle={styles.dropButton}
             containerStyle={{ marginTop: 20 }}
             onPress={this.onDropoffPressed.bind(this)}
@@ -56,10 +55,10 @@ export default class PickOrDropPage extends React.Component {
 const styles = StyleSheet.create({
 
   background: {
-    width: '100%', 
+    width: '100%',
     height: '100%'
   },
-  
+
   whitescreen: {
     flex: 1,
     alignItems: 'center',
@@ -103,4 +102,4 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
   },
-}); 
+});

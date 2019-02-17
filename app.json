@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "github.com/sepehr-yazdani/hacknyu2019@ui",
-    "description": "sepehr-yazdani/hacknyu2019 @ Feb 16, 2019",
+    "name": "Grocer.ly",
+    "description": "None",
+    "slug": "Grocer.ly",
     "privacy": "unlisted",
     "sdkVersion": "32.0.0",
     "version": "1.0.0",
