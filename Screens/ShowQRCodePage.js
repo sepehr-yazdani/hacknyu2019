@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert} from 'react-native';
+import { StyleSheet, Text, View, Alert} from 'react-native';
+import {Button} from 'react-native-elements';
 import QRCode from 'react-native-qrcode-svg';
 
 export default class ShowQRCodePage extends React.Component{
@@ -53,14 +54,14 @@ export default class ShowQRCodePage extends React.Component{
           size={200}/>
         <Button
           title={'Finish'}
-          style={styles.input}
+          buttonStyle={styles.button}
+          titleStyle={{fontWeight: '400', fontSize: 24}}
           onPress={this.onFinish.bind(this)}
         />
         <Button
           title={'Go to Map'}
-          titleStyle={{fontWeight: '300', fontSize: 24}}
+          titleStyle={{fontWeight: '300', fontSize: 24,  color: 'rgba(0, 0, 0, 1)',}}
           buttonStyle={styles.goToMapButton}
-          style={styles.input}
           containerStyle={{ marginTop: 20 }}
           onPress={()=>this.props.navigation.navigate('ShowMapPage')}
         />
@@ -75,13 +76,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#aaaaff',
+    backgroundColor: 'rgba(56, 142 , 60, 1)',
   },
   goToMapButton: {
       //flex: 1,
       //flexDirection: 'column',
       alignSelf: "center",
-      backgroundColor: "rgba(0, 70 , 180, 1)",
+      backgroundColor: "rgba(205, 220 , 57, 1)",
       width: 300,
       height: 50,
       borderColor: "transparent",
@@ -90,4 +91,15 @@ const styles = StyleSheet.create({
       marginTop: 100,
       marginBottom: 10,
   },
+  button: {
+    //flex: 1,
+    //flexDirection: 'column',
+    alignSelf: 'center',
+    backgroundColor: 'rgba(25, 111,61, 1)',
+    width: 240,
+    height: 80,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
 });

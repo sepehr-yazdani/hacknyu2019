@@ -39,7 +39,7 @@ export default class SetBagNumPage extends React.Component{
             onChangeText={(numBags) => this.setState({ numBags })}
             placeholder={'0'}
             style={styles.inputText}
-            keyboardType={'numeric'}
+            keyboardType={'number-pad'}
           />
           <Button
             title={'Submit'}
@@ -56,7 +56,7 @@ export default class SetBagNumPage extends React.Component{
           />
           <Button
            title={'Go to Map'}
-           titleStyle={{fontWeight: '300', fontSize: 24}}
+           titleStyle={{fontWeight: '300', fontSize: 24,  color: 'rgba(0, 0, 0, 1)',}}
            buttonStyle={styles.goToMapButton}
            style={styles.input}
            containerStyle={{ marginTop: 20 }}
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
     height: 100,
     marginLeft: 15,
     marginRight: 15,
-    paddingLeft: 100,
-    paddingRight: 100,
+    paddingLeft: 30,
+    paddingRight: 30,
     backgroundColor: 'rgba(255,255,255,1)',
     borderColor: 'rgba(158, 158, 158, 1)',
     borderWidth: 1,
@@ -84,13 +84,13 @@ const styles = StyleSheet.create({
   },
 
   textAnnounce: {
-    fontSize: 21,
-    fontWeight: '300',
-    paddingBottom: 20,
+    fontSize: 18,
+    fontWeight: '500',
+    paddingBottom: 10,
     marginRight: 10,
     marginLeft: 10,
     //fontFamily: 'Roboto',
-    color: 'rgba(46,125,50,1)',
+    color: 'rgba(26,105,30,1)',
   },
 
   background: {
@@ -104,10 +104,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: 'rgba(255,255,255,0.8)',
-    marginTop: 50,
+    marginTop: 25,
     marginLeft: 10,
     marginRight: 10,
-    marginBottom: 50,
+    marginBottom: 25,
     //opacity: 0.8,
   },
 
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
        //flex: 1,
        //flexDirection: 'column',
        alignSelf: "center",
-       backgroundColor: "rgba(0, 70 , 180, 1)",
+       backgroundColor: "rgba(205, 220 , 57, 1)",
        width: 300,
        height: 50,
        borderColor: "transparent",

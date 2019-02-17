@@ -61,7 +61,7 @@ export default class PickOrDropPage extends React.Component {
 
           <Button
             title={'Go to Map'}
-            titleStyle={{fontWeight: '300', fontSize: 24}}
+            titleStyle={{fontWeight: '300', fontSize: 24,  color: 'rgba(0, 0, 0, 1)'}}
             buttonStyle={styles.goToMapButton}
             style={styles.input}
             containerStyle={{ marginTop: 20 }}
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         //flex: 1,
         //flexDirection: 'column',
         alignSelf: "center",
-        backgroundColor: "rgba(0, 70 , 180, 1)",
+        backgroundColor: "rgba(205, 220 , 57, 1)",
         width: 300,
         height: 50,
         borderColor: "transparent",
