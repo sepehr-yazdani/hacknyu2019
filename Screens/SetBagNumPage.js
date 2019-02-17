@@ -14,11 +14,16 @@ export default class SetBagNumPage extends React.Component{
   }
 
   render() {
+    const {navigation}=this.props;
+    const username=navigation.getParam('username', '');
+    const dropoffPressed=navigation.getParam('dropoffPressed', true);    
+
     return (
       <View style={styles.container}>
-        <Text>
-          Enter the number of bags to drop off:          
-        </Text>
+        {dropoffPressed==true ?
+          <Text>Enter number of bags to drop off:</Text> :
+          <Text>Enter number of bags to pick up:</Text>
+        }        
         <TextInput
           value={this.state.numBags}
           onChangeText={(numBags) => this.setState({ numBags })}
@@ -28,7 +33,11 @@ export default class SetBagNumPage extends React.Component{
         <Button
           title={'Submit'}
           style={styles.input}
-          onPress={this.onSubmitPressed.bind(this)}
+          onPress={()=>this.props.navigation.navigate('ShowMapPage', {
+            'username': username,
+            'dropoffPressed': dropoffPressed,
+            'numBags': this.state.numBags
+          })}
         />
       </View>
     );
