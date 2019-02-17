@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     marginRight: 10,
     marginLeft: 10,
-    fontFamily: 'Roboto',
+    //fontFamily: 'Roboto',
     color: 'rgba(46,125,50,1)',
   },
 
