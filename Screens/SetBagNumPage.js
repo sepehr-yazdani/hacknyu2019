@@ -13,16 +13,16 @@ export default class SetBagNumPage extends React.Component{
   onSubmitPressed(){
     this.props.navigation.navigate('ShowMapPage')
   }
-  
+
   onMapButtonPressed(){
     this.props.navigation.navigate('ShowMapPage')
   }
 
   render() {
-    const {navigation}=this.props;    
+    const {navigation}=this.props;
     const username=navigation.getParam('username', '');
-    const dropoffPressed=navigation.getParam('dropoffPressed', true); 
-    const dropoff=navigation.getParam('dropoff', 0);   
+    const dropoffPressed=navigation.getParam('dropoffPressed', true);
+    const dropoff=navigation.getParam('dropoff', 0);
     const pickup=navigation.getParam('pickup', 0);
     let str='You have dropped off '+dropoff+' bags and picked up '+pickup+' bags up to now. '
 
@@ -33,7 +33,7 @@ export default class SetBagNumPage extends React.Component{
           {dropoffPressed==true ?
             <Text style={styles.textAnnounce}>How many bags would you like to drop off today?</Text> :
             <Text style={styles.textAnnounce}>How many bags would you like to pick up today?</Text>
-          }         
+          }
           <TextInput
             value={this.state.numBags}
             onChangeText={(numBags) => this.setState({ numBags })}
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     marginRight: 10,
     marginLeft: 10,
-    fontFamily: 'Roboto',
+    //fontFamily: 'Roboto',
     color: 'rgba(46,125,50,1)',
   },
 

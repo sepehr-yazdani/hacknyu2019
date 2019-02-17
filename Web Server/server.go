@@ -42,6 +42,8 @@ func insertToMap(name string, dropoff int, pickup int){
 }
 func main(){
   database = NameDB{map[string]Score{}, sync.Mutex{}}
+  database.db["Alice"] = Score{5,5}
+  database.db["Bob"] = Score{15,6} // Hardcoding initial values
   listenPort := ":8080"
   app := iris.New()
 
@@ -78,6 +80,11 @@ func main(){
     name:= ctx.Params().GetString("person")
     fmt.Println(name + " is here!") // Remove once testing is done
     currScore,exists := database.db[name]
+    if exists{
+      fmt.Println(currScore.Dropoff)
+      fmt.Println(currScore.Pickup)
+      fmt.Println("==========")
+    }
     database.mutex.Unlock()
     if !exists{
       insertToMap(name, 0, 0)
