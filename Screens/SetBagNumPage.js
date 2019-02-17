@@ -29,10 +29,11 @@ export default class SetBagNumPage extends React.Component{
     return (
      <ImageBackground source={require('../assets/greenpattern.jpg')} style={styles.background}>
         <View style={styles.whitescreen}>
+          <Text style={styles.textAnnounce}>{str}</Text>
           {dropoffPressed==true ?
-            <Text style={styles.textAnnounce}>{str}How many bags would you like to drop off today?</Text> :
-            <Text style={styles.textAnnounce}>{str}How many bags would you like to pick up today?</Text>
-          }        
+            <Text style={styles.textAnnounce}>How many bags would you like to drop off today?</Text> :
+            <Text style={styles.textAnnounce}>How many bags would you like to pick up today?</Text>
+          }         
           <TextInput
             value={this.state.numBags}
             onChangeText={(numBags) => this.setState({ numBags })}
@@ -74,8 +75,8 @@ const styles = StyleSheet.create({
   },
 
   textAnnounce: {
-    fontSize: 42,
-    fontWeight: '800',
+    fontSize: 21,
+    fontWeight: '300',
     paddingBottom: 20,
     marginRight: 10,
     marginLeft: 10,

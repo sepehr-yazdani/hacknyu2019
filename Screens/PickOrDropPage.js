@@ -33,7 +33,7 @@ export default class PickOrDropPage extends React.Component {
     const {navigation}=this.props;    
     const username=navigation.getParam('username', '');
     let dropoff, pickup;
-    let url='http://172.29.240.182:8080/ask/'+ username;
+    let url='http://34.73.75.40:8080/ask/'+ username;
     fetch(url, {method: 'GET'}
             ).then((response) => response.json()).then((responseJson) => {
         dropoff=responseJson.Dropoff;

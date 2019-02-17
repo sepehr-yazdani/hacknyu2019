@@ -38,7 +38,7 @@ export default class ShowQRCodePage extends React.Component{
     const dropoffPressed=navigation.getParam('dropoffPressed', true);
     const numBags=navigation.getParam('numBags', 0);
 
-    var str='http://172.29.240.182:8080/';
+    var str='http://34.73.75.40:8080/';
     if(dropoffPressed){
       str=str+'dropoff'
     }else{
