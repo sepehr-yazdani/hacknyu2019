@@ -3,6 +3,13 @@ import { StyleSheet, Text, View, Button, Alert} from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 
 export default class ShowQRCodePage extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      QRstring: '',
+    };
+  }
+
   onFinish(){
   //  this.setState(true)  
     this.props.navigation.navigate('ThankyouPage')
@@ -27,9 +34,6 @@ export default class ShowQRCodePage extends React.Component{
         <QRCode
           value={str}
           size={200}/> 
-          <Text>
-          {str}
-          </Text>
         <Button
           title={'Finish'}
           style={styles.input}

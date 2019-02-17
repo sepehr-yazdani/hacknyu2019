@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert} from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, ImageBackground, Alert} from 'react-native';
+import { Button, Card, FormLabel } from 'react-native-elements';
 
 export default class PickOrDropPage extends React.Component {
   constructor(props) {
@@ -13,28 +14,39 @@ export default class PickOrDropPage extends React.Component {
   
   onPickupPressed(){
   //  this.setState(false) 
+
     this.props.navigation.navigate('SetBagNumPage', {username: this.username, dropoffPressed: false})
+
   }
 
   onDropoffPressed(){
   //  this.setState(true)  
+
     this.props.navigation.navigate('SetBagNumPage', {username: this.username, dropoffPressed: true})
+
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Button
-          title={'Pick Up'}
-          style={styles.input}
-          onPress={this.onPickupPressed.bind(this)}
-        />
-        <Button
-          title={'Drop Off'}
-          style={styles.input}
-          onPress={this.onDropoffPressed.bind(this)}
-        />
-      </View>
+      <ImageBackground source={require('../assets/greenpattern.jpg')} style={styles.background}>
+        <View style={styles.whitescreen}>
+          <Button
+            title={'Pick Up'}
+            titleStyle={{fontWeight: "700", fontSize: "32"}}
+            buttonStyle={styles.pickButton}
+            containerStyle={{ marginTop: 20 }}
+            onPress={this.onPickupPressed.bind(this)}
+          />
+        
+          <Button
+            title={'Drop Off'}
+            titleStyle={{fontWeight: "700", fontSize: "32"}}
+            buttonStyle={styles.dropButton}
+            containerStyle={{ marginTop: 20 }}
+            onPress={this.onDropoffPressed.bind(this)}
+          />
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -42,11 +54,53 @@ export default class PickOrDropPage extends React.Component {
 
 
 const styles = StyleSheet.create({
-  container: {
+
+  background: {
+    width: '100%', 
+    height: '100%'
+  },
+  
+  whitescreen: {
     flex: 1,
     alignItems: 'center',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#aaffaa',
+    backgroundColor: 'rgba(255,255,255,0.8)',
+    marginTop: 50,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 50,
+    //opacity: 0.8,
   },
-});
+
+  pickButton: {
+        //flex: 1,
+        //flexDirection: 'column',
+        alignSelf: "center",
+        backgroundColor: "rgba(17, 163,52, 1)",
+        width: 200,
+        height: 100,
+        borderColor: "transparent",
+        borderWidth: 0,
+        borderRadius: 5,
+        marginTop: 10,
+        marginRight: 10,
+        marginBottom: 10,
+  },
+
+
+
+  dropButton: {
+        //flex: 1,
+        //flexDirection: 'column',
+        alignSelf: "center",
+        backgroundColor: "rgba(17, 163,52, 1)",
+        width: 200,
+        height: 100,
+        borderColor: "transparent",
+        borderWidth: 0,
+        borderRadius: 5,
+        marginTop: 10,
+        marginBottom: 10,
+  },
+}); 

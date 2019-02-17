@@ -4,7 +4,9 @@ import { StyleSheet, Text, View, Button, Alert} from 'react-native';
 export default class ShowMapPage extends React.Component{
   render() {
     const {navigation}=this.props;
+
     const username=navigation.getParam('username', '');
+
     const dropoffPressed=navigation.getParam('dropoffPressed', true);
     const numBags=navigation.getParam('numBags', 0);
  // Please follow the map to find your nearest station
@@ -15,6 +17,7 @@ export default class ShowMapPage extends React.Component{
           style={styles.input}
           onPress={() => this.props.navigation.navigate('ShowQRCodePage', {
             'username': username,
+
             'dropoffPressed': dropoffPressed,
             'numBags': numBags
           })}

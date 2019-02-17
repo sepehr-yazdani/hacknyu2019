@@ -15,8 +15,10 @@ export default class SetBagNumPage extends React.Component{
 
   render() {
     const {navigation}=this.props;
+
     const username=navigation.getParam('username', '');
     const dropoffPressed=navigation.getParam('dropoffPressed', true);    
+
 
     return (
       <View style={styles.container}>
@@ -34,7 +36,9 @@ export default class SetBagNumPage extends React.Component{
           title={'Submit'}
           style={styles.input}
           onPress={()=>this.props.navigation.navigate('ShowMapPage', {
+
             'username': username,
+
             'dropoffPressed': dropoffPressed,
             'numBags': this.state.numBags
           })}
