@@ -11,8 +11,25 @@ export default class ShowQRCodePage extends React.Component{
   }
 
   onFinish(){
+    const {navigation}=this.props;
+    const numBags=navigation.getParam('numBags', 0);  
+    const dropoff=navigation.getParam('dropoff', 0); 
+    const dropoffPressed=navigation.getParam('dropoffPressed', true);  
+    const pickup=navigation.getParam('pickup', 0);
+    let out1=dropoff;
+    let out2=pickup;
+    if(dropoffPressed){
+      out1=parseInt(out1)+parseInt(numBags);
+    }else{
+      out2=parseInt(out2)+parseInt(numBags);
+    }
   //  this.setState(true)  
-    this.props.navigation.navigate('ThankyouPage')
+    this.props.navigation.navigate('ThankyouPage', {numBags : numBags, 'dropoff': out1,
+            'pickup': out2})
+  }
+
+  onMapButtonPressed(){
+    this.props.navigation.navigate('ShowMapPage')
   }
 
   render() {
@@ -21,7 +38,7 @@ export default class ShowQRCodePage extends React.Component{
     const dropoffPressed=navigation.getParam('dropoffPressed', true);
     const numBags=navigation.getParam('numBags', 0);
 
-    var str='http://10.18.224.223:8080/';
+    var str='http://172.29.240.182:8080/';
     if(dropoffPressed){
       str=str+'dropoff'
     }else{

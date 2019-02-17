@@ -8,13 +8,18 @@ export default class ThankyouPage extends React.Component{
   }
 
   render() {
+    const {navigation}=this.props;
+    const numBags=navigation.getParam('numBags', 0);    
+    const dropoff=navigation.getParam('dropoff', 0);   
+    const pickup=navigation.getParam('pickup', 0);
+    let str = 'You have now dropped '+ dropoff + ' bags and picked up ' + pickup +' bags! Thank you for helping with our sustainability!';
     return (
       <View style={styles.container}>
         <Text>
-          'Thank you for saving our planet!'
+           { str }
         </Text>        
         <Button
-          title={'Back'}
+          title={'Sign out'}
           style={styles.input}    
           onPress={this.onBackPressed.bind(this)}
         />       
