@@ -1,47 +1,48 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView, Image, ImageBackground, Alert} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
 
-export default class ThankyouPage extends React.Component{  
+export default class ThankyouPage extends React.Component{
   onBackPressed(){
-  //  this.setState(true)  
+  //  this.setState(true)
     this.props.navigation.navigate('LoginPage')
   }
 
   render() {
     const {navigation}=this.props;
-    const numBags=navigation.getParam('numBags', 0);    
-    const dropoff=navigation.getParam('dropoff', 0);   
+    const numBags=navigation.getParam('numBags', 0);
+    const dropoff=navigation.getParam('dropoff', 0);
     const pickup=navigation.getParam('pickup', 0);
     let str = 'You have now dropped '+ dropoff + ' bags and picked up ' + pickup +' bags! Thank you for helping with our sustainability!';
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
           <Text style = {styles.textThanks}>
             { str }
-          </Text>        
-          
+          </Text>
+
           <Button
             title={'Sign out'}
             titleStyle={{fontWeight: '500', fontSize: 30,  color: 'rgba(0, 0, 0, 1)',}}
             buttonStyle={styles.button}
-            containerStyle={{ marginTop: 20 }}   
+            containerStyle={{ marginTop: 20 }}
             onPress={this.onBackPressed.bind(this)}
           />
 
-          <Image source={require('../assets/thankuearth.jpg')} style={styles.background}>      
+          <Image source={require('../assets/thankuearth.jpg')} style={styles.background}>
           </Image>
-        </ScrollView>
+        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   background: {
-    width: '100%', 
-    height: '100%',
-    allign: 'Center'
+    width: 250,
+    height: 220,
+    alignItems: 'center',
+    marginTop: 20,
   },
-  
+
   container: {
     flex: 1,
     alignItems: 'center',
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     color: 'rgba(20, 90, 50,1)',
   },
 
-  
+
   button: {
     //flex: 1,
     //flexDirection: 'column',
