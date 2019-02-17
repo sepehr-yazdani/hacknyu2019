@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Request } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, Request, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
+import logoImg from '../assets/download.png';
 
 export default class LoginPage extends React.Component {
   constructor(props){
@@ -25,13 +26,16 @@ export default class LoginPage extends React.Component {
        password : this.state.password,
       });
   }
-  
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>
-          Login:
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <Image source={logoImg} style={styles.image} />
+        <Text style={styles.text}>Grocer.ly</Text>
+        <Text style={styles.login}>
+          Login
         </Text>
+
         <TextInput
           value={this.state.username}
           onChangeText={(username) => this.setState({ username })}
@@ -46,12 +50,10 @@ export default class LoginPage extends React.Component {
           style={styles.input}
         />
 
-        <Button
-          title={'Login'}
-          style={styles.input}
-          onPress={this.onAuthenticate.bind(this)}
-        />
-      </View>
+        <TouchableOpacity onPress={this.onAuthenticate.bind(this)}>
+          <Text style={styles.button}>Login</Text>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -59,17 +61,43 @@ export default class LoginPage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 3,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#00ffff',
+    backgroundColor: '#fffce2',
+  },
+  image: {
+    width: 120,
+    height: 120,
+  },
+  text: {
+    color: '#111602',
+    fontWeight: 'bold',
+    backgroundColor: 'transparent',
+    marginBottom: 20,
+  },
+  login:{
+    fontSize: 40,
+    marginBottom: 25,
   },
   input: {
-    width: 200,
-    height: 44,
+    width: 300,
+    height: 60,
     padding: 10,
     borderWidth: 1,
     borderColor: 'black',
     marginBottom: 10,
+    fontSize: 16,
   },
+  button:{
+    backgroundColor: 'rgb(25,111,61)',
+    borderColor: 'white',
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    padding: 12,
+    textAlign:'center',
+    width: 300,
+  }
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Alert, TextInput, ImageBackground} from 'react-native';
+import { StyleSheet, Text, View, Alert, TextInput, ImageBackground, KeyboardAvoidingView} from 'react-native';
 import {Button} from 'react-native-elements'
 
 export default class SetBagNumPage extends React.Component{
@@ -28,7 +28,7 @@ export default class SetBagNumPage extends React.Component{
 
     return (
      <ImageBackground source={require('../assets/greenpattern.jpg')} style={styles.background}>
-        <View style={styles.whitescreen}>
+        <KeyboardAvoidingView style={styles.whitescreen}  behavior="padding">
           <Text style={styles.textAnnounce}>{str}</Text>
           {dropoffPressed==true ?
             <Text style={styles.textAnnounce}>How many bags would you like to drop off today?</Text> :
@@ -62,7 +62,7 @@ export default class SetBagNumPage extends React.Component{
            containerStyle={{ marginTop: 20 }}
            onPress={()=>this.props.navigation.navigate('ShowMapPage')}
          />
-        </View>
+        </KeyboardAvoidingView>
       </ImageBackground>
     );
   }
