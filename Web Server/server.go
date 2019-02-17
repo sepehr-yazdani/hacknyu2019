@@ -31,7 +31,7 @@ func insertToMap(name string, dropoff int, pickup int){
   defer database.mutex.Unlock()
   currScore, present :=database.db[name]
   if !present{
-    fakeScore := Score{0,0}
+    fakeScore := Score{dropoff,pickup}
     database.db[name] = fakeScore
   } else{
     currScore.Dropoff += dropoff
