@@ -25,10 +25,6 @@ export default class PickOrDropPage extends React.Component {
 
   }
 
-  onMapButtonPressed(){
-    this.props.navigation.navigate('ShowMapPage')
-  }
-
   render() {
     const {navigation}=this.props;    
     const username=navigation.getParam('username', '');
@@ -69,7 +65,7 @@ export default class PickOrDropPage extends React.Component {
             buttonStyle={styles.goToMapButton}
             style={styles.input}
             containerStyle={{ marginTop: 20 }}
-            onPress={this.onDropoffPressed.bind(this)}
+            onPress={()=>this.props.navigation.navigate('ShowMapPage')}
           />
         </View>
       </ImageBackground>
