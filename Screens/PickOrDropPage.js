@@ -14,12 +14,16 @@ export default class PickOrDropPage extends React.Component {
   
   onPickupPressed(){
   //  this.setState(false) 
-    this.props.navigation.navigate('SetBagNumPage', {dropoffPressed: false})
+
+    this.props.navigation.navigate('SetBagNumPage', {username: this.username, dropoffPressed: false})
+
   }
 
   onDropoffPressed(){
   //  this.setState(true)  
-    this.props.navigation.navigate('SetBagNumPage', {dropoffPressed: true})
+
+    this.props.navigation.navigate('SetBagNumPage', {username: this.username, dropoffPressed: true})
+
   }
 
   render() {

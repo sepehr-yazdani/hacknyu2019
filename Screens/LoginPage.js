@@ -10,6 +10,15 @@ export default class LoginPage extends React.Component {
     };
   }
 
+  onAuthenticate(){
+    const { username, password } = this.state
+    if(password=='qwerty'){
+      this.onLogin();
+    }else{
+      alert('Incorrect user name or password. Please try again.')
+    }
+  }
+
   onLogin() {
     const { username, password } = this.state
     fetch('172.29.240.182:8080/fetch/', {method: 'POST'});
@@ -44,7 +53,7 @@ export default class LoginPage extends React.Component {
         <Button
           title={'Login'}
           style={styles.input}
-          onPress={this.onLogin.bind(this)}
+          onPress={this.onAuthenticate.bind(this)}
         />
       </View>
     );
