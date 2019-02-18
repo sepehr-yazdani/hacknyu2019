@@ -2,6 +2,12 @@
 
 An app that focuses of gameifying recycling and making it fun by providing incentives.
 
+This is a part of a system we designed. We also have hardware (Qualcomm Dragonboard) that uses an ultrasonic sensor to keep
+track of how many plastic bags. Originally, we wanted the hardware to scan our QR codes, but we didn't have a camera
+available.
+
+Devpost: https://devpost.com/software/grocer-ly
+
 How to run:
 
 We're using expo as a way to facilitate our React Native development, and so this might take a tiny bit longer. These steps
